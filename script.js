@@ -63,6 +63,7 @@ function addSearchToHistory(date) {
 }
 
 function searchDate(date) {
+    image.src = "";
     let url = `https://api.nasa.gov/planetary/apod?api_key=${api_key}&date=${date.innerHTML}`
     console.log(url);
     fetch(url)
@@ -85,5 +86,6 @@ window.onload = () => {
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
+    image.src = "";
     getImageOfTheDay();
 });
